@@ -67,6 +67,7 @@ def standard_psrflux(archives):
             with open("%s" % (full_name), "a") as myfile:
                 myfile.write("\n # %s %s %f %f %f %f %s %s" % (name, site, freq_lo, freq_hi, mjd_start, mjd_end, ra, dec))
             #subprocess.call('rm %s' % archive_dyn, shell=True)
+    return dynspec, name, site, freq_lo, freq_hi, mjd_start, mjd_end, ra, dec
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Select the archive.')
@@ -76,4 +77,4 @@ if __name__ == '__main__':
 
     ignorewarnings()
   
-    standard_psrflux(archives)
+    dynspec, name, site, freq_lo, freq_hi, mjd_start, mjd_end, ra, dec = standard_psrflux(archives)
