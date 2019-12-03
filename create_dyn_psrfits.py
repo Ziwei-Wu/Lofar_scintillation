@@ -258,6 +258,8 @@ def standard_psrfits(args):
     with open(full_name, "a") as myfile:
         myfile.write("\n # %s %s %f %f %f %f %s %s %s" %
                      (name, site, freq_lo, freq_hi, mjd_start, mjd_end, ra, dec))   
+        
+    return dynspeccombine, name, site, freq_lo, freq_hi, mjd_start, mjd_end, ra, dec
 
 
 def main():
@@ -265,7 +267,7 @@ def main():
     parser.add_argument('inputfile', nargs='+', help='the input archive')
     parser.add_argument('-c','--combinefacotr', type=int, default=1, help='Combine factor')
     args = parser.parse_args()
-    standard_psrfits(args)
+    dynspeccombine, name, site, freq_lo, freq_hi, mjd_start, mjd_end, ra, dec = standard_psrfits(args)
 
 if  __name__=="__main__":
     ignorewarning()
