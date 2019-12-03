@@ -279,7 +279,7 @@ def standard_psrfits(args):
     full_name =  '%s_%.2f_%.2f_dyn.txt' % (name, mjd_start, (freq_lo+freq_hi)/2)
     np.savetxt(full_name, dynspeccombine, fmt='%.9f')
     with open(full_name, "a") as myfile:
-        myfile.write("\n # %s %s %f %f %f %f %s %s %s" %
+        myfile.write("\n # %s %s %f %f %f %f %s %s" %
                      (name, site, freq_lo, freq_hi, mjd_start, mjd_end, ra, dec)) 
 
     return dynspeccombine, name, site, freq_lo, freq_hi, mjd_start, mjd_end, ra, dec
