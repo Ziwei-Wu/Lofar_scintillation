@@ -249,6 +249,8 @@ def standard_psrfits(args):
             switch = 0
         else:
             dynspeccombine = np.concatenate((dynspeccombine, dynspec), axis=1)
+        number += 1
+        
     freq_lo = np.min(freq_lo_list)
     freq_hi = np.max(freq_hi_list)
 
