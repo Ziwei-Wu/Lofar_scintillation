@@ -276,7 +276,7 @@ def standard_psrfits(args):
     freq_hi = np.max(freq_hi_list)
 
     #save dynspec 
-    full_name =  '%s_%.2f_%.2f_dyn.txt' % (name, mjd_start, (freq_lo+freq+hi)/2)
+    full_name =  '%s_%.2f_%.2f_dyn.txt' % (name, mjd_start, (freq_lo+freq_hi)/2)
     np.savetxt(full_name, dynspeccombine, fmt='%.9f')
     with open(full_name, "a") as myfile:
         myfile.write("\n # %s %s %f %f %f %f %s %s %s" %
