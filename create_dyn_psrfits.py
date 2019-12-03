@@ -1,3 +1,10 @@
+#!/usr/bin/env python
+
+"""
+create_dyn_psrfits.py
+----------------------------------
+Crate dynamic spectrum by converting .ar into psrfits
+"""
 import argparse
 import warnings
 import numpy as np
